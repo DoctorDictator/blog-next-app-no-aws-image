@@ -1,95 +1,54 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+import Link from "next/link";
+import classes from "./page.module.css";
+import ImageSlideshow from "@/components/images/image-slideshow";
+import ImageSlideshowWrapper from "@/components/images/ImageSlideshowWrapper";
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+      <header className={classes.header}>
+        <div className={classes.slideshow}>
+          <ImageSlideshowWrapper />
         </div>
+        <div>
+          <div className={classes.hero}>
+            <h1>Para Posts for Bloggers</h1>
+            <p>Share your knowledge with the world</p>
+          </div>
+          <div className={classes.cta}>
+            <Link href="/community">Join the Community</Link>
+            <Link href="/posts">See All Posts</Link>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section className={classes.section}>
+          <h2>How it works</h2>
+          <p>
+            Para Posts is a vibrant platform for thinkers and creators to share
+            their knowledge, ideas, and insights with a global audience. It’s a
+            space to explore fresh perspectives, spark meaningful discussions,
+            and connect with others passionate about learning and innovation.
+          </p>
+          <p>
+            Para Posts is a hub for discovering new ideas and engaging with a
+            community of curious minds.
+          </p>
+        </section>
+
+        <section className={classes.section}>
+          <h2>Why Para Posts?</h2>
+          <p>
+            Para Posts empowers individuals to share their expertise and unique
+            viewpoints through blogging. It’s a place to dive into
+            thought-provoking content, uncover new concepts, and build
+            connections with others who value knowledge and creativity.
+          </p>
+          <p>
+            Para Posts is your go-to destination for inspiration, learning, and
+            connecting with a community of idea enthusiasts.
+          </p>
+        </section>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
